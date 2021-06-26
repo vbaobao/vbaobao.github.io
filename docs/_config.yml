@@ -22,13 +22,14 @@ title: vbaobao_blog
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A static site engineering blog.
-baseurl: "vbaobao.github.io" # the subpath of your site, e.g. /blog
+domain: "vbaobao.github.io"
+baseurl: "/vbaobao.github.io" # the subpath of your site, e.g. /blog
 url: "https://vbaobao.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vbao_is_here
 github_username:  vbaobao
 
 # Build settings
-theme: jekyll-theme-minimal
+remote_theme: hydecorp/hydejack
 plugins:
   - jekyll-feed
 
