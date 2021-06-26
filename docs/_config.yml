@@ -28,7 +28,7 @@ twitter_username: vbao_is_here
 github_username:  vbaobao
 
 # Build settings
-theme: jekyll-theme-minimal
+remote_theme: henrythemes/jekyll-minimal-theme
 plugins:
   - jekyll-feed
 
