@@ -9,7 +9,6 @@ twitter_username: vbao_is_here
 github_username:  vbaobao
 
 # Build settings
-remote_theme: hydecorp/hydejack
 plugins:
   - jekyll-feed
 markdown: GFM
