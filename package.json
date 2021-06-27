@@ -1,0 +1,20 @@
+{
+  "name": "vbaobao.github.io",
+  "version": "1.0.0",
+  "description": "Set-up was done following [Github Pages Docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbaobao/vbaobao.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vbaobao/vbaobao.github.io/issues"
+  },
+  "homepage": "https://github.com/vbaobao/vbaobao.github.io#readme"
+}
