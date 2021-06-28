@@ -1,0 +1,27 @@
+title: vbaobao_blog
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A static site engineering blog.
+domain: "vbaobao.github.io"
+url: "https://vbaobao.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: vbao_is_here
+github_username:  vbaobao
+
+# Build settings
+destination: public
+source: src
+plugins:
+  - jekyll-feed
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
