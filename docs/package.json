@@ -1,0 +1,33 @@
+{
+  "name": "vbaobao.github.io",
+  "version": "1.0.0",
+  "description": "Set-up was done following [Github Pages Docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll).",
+  "main": "index.js",
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+  },
+  "scripts": {
+    "react-dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbaobao/vbaobao.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vbaobao/vbaobao.github.io/issues"
+  },
+  "homepage": "https://github.com/vbaobao/vbaobao.github.io#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
