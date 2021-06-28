@@ -7,6 +7,6 @@ vendor
 package-lock.json
 node_modules
 public
-src/assets/js/bundle.js
+assets/js/bundle.js
 
 .DS_store
