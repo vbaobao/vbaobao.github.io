@@ -1,10 +1,10 @@
 title: vbaobao_blog
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # this means to ignore newlines until 'baseurl:'
   A static site engineering blog.
-domain: "vbaobao.github.io"
-baseurl: ""
-url: "https://vbaobao.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+domain: 'vbaobao.github.io'
+baseurl: ''
+url: 'https://vbaobao.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vbao_is_here
 github_username:  vbaobao
 
@@ -30,3 +30,18 @@ exclude:
 collections:
   projects:
     output: true
+
+# Build vars
+social_links:
+  LinkedIn: ''
+  Github: ''
+  Email: ''
+
+colors:
+  black: '#1a1b20'
+  dark-grey: '#424450'
+  light-grey: '#7a7a7a'
+  white: '#e2e3e7'
+  red: '#ff5f61'
+  purple: '#946bf4'
+  yellow: '#ffc541'
