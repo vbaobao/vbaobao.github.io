@@ -1,6 +1,35 @@
 ---
 ---
-@import "main";
+@import "markdown";
 @import "dracula";
 @import "static";
 @import "keyframes";
+
+body, footer {
+  background-color: {{ site.colors.black }};
+  color: {{ site.colors.white }};
+
+  .content-container {
+    background-color: {{ site.colors.dark-grey }};
+  }
+}
+
+a {
+  color: {{ site.colors.white }};
+
+  &:hover {
+    background-color: {{ site.colors.light-grey }};
+  }
+}
+
+.linkedin {
+  fill: {{ site.colors.red }};
+}
+
+.github {
+  fill: {{ site.colors.purple }};
+}
+
+.email {
+  fill: {{ site.colors.yellow }};
+}
