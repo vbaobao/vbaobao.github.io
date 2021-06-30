@@ -1,16 +1,74 @@
-nav {
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 100vh;
+
+  &.home {
+    grid-template-columns: auto;
+  }
+}
+
+nav{
+  display: grid;
+  grid-template-rows: 1fr auto auto 8fr;
+  grid-template-areas:
+    "."
+    "welcome"
+    "links"
+    ".";
+  justify-content: center;
+}
+
+nav div {
+  grid-area: links;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  > {
+    a {
+      margin: 5px auto;
+    }
+  }
+}
+
+header {
+  grid-area: welcome;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+}
+
+.content-container {
+  top: 0;
+  bottom:0;
+  left: 25%;
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  width: 100%;
 }
 
 .socials {
-  img {
-    width: 25px;
-    height: 25px;
+  display: flex;
+  flex-direction: row;
+
+  span {
+    margin: 5px;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
   }
+}
+
+img {
+  height: 200px;
+  width: 200px;
 }
