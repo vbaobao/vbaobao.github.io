@@ -11,6 +11,34 @@ body, footer {
 
   .content-container {
     background-color: {{ site.colors.dark-grey }};
+
+    h1 { text-decoration-color: {{ site.colors.red }}; }
+
+    ol li::before { color: {{ site.colors.purple }}; }
+
+    ul {
+      li::before { color: {{ site.colors.yellow }}; }
+      li a { color: {{ site.colors.white }}; }
+    }
+
+    a { color: {{ site.colors.light-grey }}; }
+
+    blockquote p {
+      border-left: 2px solid {{ site.colors.purple }};
+      padding: 5px;
+    }
+
+    hr { border-bottom: 2px solid {{ site.colors.purple }}; }
+
+    table { border: 1px solid {{ site.colors.purple }}; }
+
+    th {
+      border: 1px solid {{ site.colors.purple }};
+      background-color: {{ site.colors.purple }};
+      color: {{ site.colors.dark-grey }};
+    }
+
+    td { border: 1px dotted {{ site.colors.purple }}; }
   }
 }
 
