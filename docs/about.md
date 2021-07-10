@@ -3,14 +3,10 @@ layout: page
 title: About
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Hello! I'm Virginia and a software engineer
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+This website is a pseudo-portfolio and engineering blog.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I've always had an affinity for programming, but did not approach it as a career path until after I already graduated university.
 
-[jekyll-organization]: https://github.com/jekyll
+But it's never too late, and there will always be technological advancements in one form or another. And I hope I will be there to be a part of it.
