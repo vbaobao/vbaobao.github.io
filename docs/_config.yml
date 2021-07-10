@@ -33,9 +33,9 @@ collections:
 
 # Build vars
 social_links:
-  LinkedIn: ''
-  Github: ''
-  Email: ''
+  linkedin: 'https://www.linkedin.com/in/vibao/'
+  github: 'https://github.com/vbaobao'
+  email: ''
 
 colors:
   black: '#1a1b20'
