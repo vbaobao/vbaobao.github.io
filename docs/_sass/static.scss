@@ -41,6 +41,8 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-size: 0.75rem;
+  text-align: right;
 }
 
 .homepage {
@@ -68,9 +70,10 @@ footer {
   flex-direction: row;
 
   span {
+    display: inline-block;
     margin: 5px;
-
-    svg {
+    
+    a svg, svg {
       width: 25px;
       height: 25px;
     }
