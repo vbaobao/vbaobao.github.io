@@ -53,8 +53,8 @@ footer {
 
 .content-container {
   margin: 2% 0;
-  padding: 2% 5%;
-  width: 65%;
+  padding: 2% 2%;
+  width: 71%;
   top: 0;
   bottom: 0;
   left: 25%;
@@ -63,6 +63,10 @@ footer {
   overflow-x: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+.about-container {
+  display: flex;
 }
 
 .socials {
@@ -92,4 +96,8 @@ footer {
 .logo {
   width: 75%;
   max-width: auto;
+}
+
+.image-profile {
+  max-width: 350px;
 }
