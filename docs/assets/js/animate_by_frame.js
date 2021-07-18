@@ -5,18 +5,23 @@ const toggleVisibility = (elements) => {
 };
 
 const observer = new IntersectionObserver(toggleVisibility);
-const animateVerticalElements = document.querySelectorAll('.y-show-on-scroll');
-const animateRightHorizontalElements = document.querySelectorAll('.x-right-show-on-scroll');
-const animateLeftHorizontalElements = document.querySelectorAll('.x-left-show-on-scroll');
+const animateUpElements = document.querySelectorAll('.up-show-on-scroll');
+const animateDownElements = document.querySelectorAll('.down-show-on-scroll');
+const animateRightElements = document.querySelectorAll('.right-show-on-scroll');
+const animateLeftElements = document.querySelectorAll('left-show-on-scroll');
 
-animateVerticalElements.forEach((element) => {
+animateUpElements.forEach((element) => {
   observer.observe(element);
 });
 
-animateRightHorizontalElements.forEach((element) => {
+animateDownElements.forEach((element) => {
   observer.observe(element);
 });
 
-animateLeftHorizontalElements.forEach((element) => {
+animateRightElements.forEach((element) => {
+  observer.observe(element);
+});
+
+animateLeftElements.forEach((element) => {
   observer.observe(element);
 });
