@@ -11,9 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <div>{% include navigation.html %}</div>
-    <div class="content-container page-slide-in">
-      {{ content }}
+    {% include navigation.html %}
+    <div class="center-container">
+      {% include sidebar.html %}
+      <div class="content-container">
+        <div class="page-slide-in">
+          {% include about.html %}
+        </div>
+        <div class="page-slide-in">
+          {% include portfolio.html %}
+        </div>
+        <div class="page-slide-in">
+          {% include blog.html %}
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/bundle.js" charset="utf-8"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/animate_by_frame.js" charset="utf-8"></script>
