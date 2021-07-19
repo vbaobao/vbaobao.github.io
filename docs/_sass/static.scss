@@ -6,24 +6,19 @@ body {
 
 nav {
   display: grid;
-  grid-template-columns: auto 250px;
-  grid-template-areas: "line-x links";
-  height: 30px;
+  grid-template-columns: auto 300px;
+  grid-template-areas: "line links";
+  height: 50px;
 
   .links {
     grid-area: links;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 
     > a {
       padding: 2px;
     }
-  }
-
-  .line-x {
-    grid-area: line-x;
-    height: 50%;
-    border-bottom: solid 1px red;
   }
 }
 
@@ -35,23 +30,15 @@ footer {
   text-align: right;
 }
 
-.homepage {
-  position: fixed;
-  width: 100vw;
-  transition: width 2s ease-in 0;
+.center-container {
+  display: grid;
+  grid-template-columns: 70px auto;
+  grid-template-areas: "socials content";
 }
 
 .content-container {
-  margin: 30px 0;
-  padding: 2% 2%;
-  width: 91%;
-  top: 0;
-  bottom: 0;
-  left: 5%;
-  position: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  overflow-wrap: break-word;
+  grid-area: content;
+  padding: 25px;
   word-wrap: break-word;
 }
 
@@ -60,12 +47,14 @@ footer {
 }
 
 .socials {
+  grid-area: socials;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   span {
     display: inline-block;
-    margin: 5px;
+    margin: 10px;
+    text-align: center;
 
     a:hover {
       background-color: transparent;
@@ -83,11 +72,18 @@ footer {
   }
 }
 
-.logo {
-  width: 75%;
-  max-width: auto;
-}
-
 .image-profile {
   max-width: 350px;
+}
+
+.line-x {
+  grid-area: line;
+  height: 50%;
+  border-bottom: solid 1px red;
+}
+
+.line-y {
+  height: 100vh;
+  width: 50%;
+  border-right: solid 1px red;
 }
