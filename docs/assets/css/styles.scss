@@ -60,3 +60,11 @@ a {
 .email {
   fill: {{ site.colors.yellow }};
 }
+
+.line-x {
+  border-bottom: solid 1px {{ site.colors.red }};
+}
+
+.line-y {
+  border-right: solid 1px {{ site.colors.red }};
+}
