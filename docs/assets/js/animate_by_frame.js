@@ -9,19 +9,8 @@ const animateUpElements = document.querySelectorAll('.up-show-on-scroll');
 const animateDownElements = document.querySelectorAll('.down-show-on-scroll');
 const animateRightElements = document.querySelectorAll('.right-show-on-scroll');
 const animateLeftElements = document.querySelectorAll('.left-show-on-scroll');
+const animateElements = [...animateUpElements, ...animateDownElements, ...animateRightElements, ...animateLeftElements];
 
-animateUpElements.forEach((element) => {
-  observer.observe(element);
-});
-
-animateDownElements.forEach((element) => {
-  observer.observe(element);
-});
-
-animateRightElements.forEach((element) => {
-  observer.observe(element);
-});
-
-animateLeftElements.forEach((element) => {
+animateElements.forEach((element) => {
   observer.observe(element);
 });
