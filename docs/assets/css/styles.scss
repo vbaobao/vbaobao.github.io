@@ -9,7 +9,8 @@ body, footer {
   color: {{ site.colors.white }};
 
   .content-container {
-    background-color: {{ site.colors.dark-grey }};
+    
+    div { background-color: {{ site.colors.dark-grey }}; }
 
     h1 { text-decoration-color: {{ site.colors.red }}; }
 
