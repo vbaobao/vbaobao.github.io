@@ -1,0 +1,30 @@
+#projects {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    li::before {
+      content: none;
+    }
+
+    li a {
+      display: inline-block;
+      width: 250px;
+      padding: 5px;
+      border-radius: 7px;
+      text-decoration: none;
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      img {
+        display: inline-block;
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+      }
+    }
+  }
+}
