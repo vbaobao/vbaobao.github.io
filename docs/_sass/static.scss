@@ -5,6 +5,9 @@ body {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
   height: 50px;
@@ -31,6 +34,7 @@ footer {
 }
 
 .center-container {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 70px auto;
   grid-template-areas: "socials content";
@@ -55,6 +59,7 @@ footer {
 }
 
 .socials {
+  position: fixed;
   grid-area: socials;
   display: flex;
   flex-direction: column;
@@ -85,7 +90,7 @@ footer {
 }
 
 .line-x {
-  width: 100%;
+  width: 100vw;
   height: 50%;
 }
 
