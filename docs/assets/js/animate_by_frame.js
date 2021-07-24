@@ -1,6 +1,10 @@
 const toggleVisibility = (elements) => {
   elements.forEach((element) => {
-    element.target.classList.toggle('is-visible');
+    if (element.intersectionRatio) {
+      element.target.classList.add('is-visible');
+    } else {
+      element.target.classList.remove('is-visible');
+    }
   });
 };
 
@@ -34,4 +38,4 @@ setTimeout(() => {
   animateToggledElements.forEach((element) => {
     observerToggle.observe(element);
   });
-}, 3000);
+}, 2000);
