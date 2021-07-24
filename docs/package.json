@@ -4,10 +4,13 @@
   "description": "Set-up was done following [Github Pages Docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll).",
   "main": "index.js",
   "babel": {
-    "presets": ["@babel/preset-env", "@babel/preset-react"]
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "scripts": {
-    "react-dev": "webpack"
+    "react-dev": "webpack --watch"
   },
   "repository": {
     "type": "git",
