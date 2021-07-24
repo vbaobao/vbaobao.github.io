@@ -3,6 +3,7 @@
 @import "markdown";
 @import "dracula";
 @import "static";
+@import "projects";
 
 body, footer {
   background-color: {{ site.colors.black }};
