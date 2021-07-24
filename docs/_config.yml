@@ -27,10 +27,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-collections:
-  projects:
-    output: true
-
 # Build vars
 social_links:
   linkedin: 'https://www.linkedin.com/in/vibao/'
