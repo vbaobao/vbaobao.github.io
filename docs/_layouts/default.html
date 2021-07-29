@@ -15,15 +15,7 @@
     <div class="center-container">
       {% include sidebar.html %}
       <div class="content-container">
-        <div class="left-show-on-scroll">
-          {% include about.html %}
-        </div>
-        <div class="left-show-on-scroll">
-          {% include portfolio.html %}
-        </div>
-        <div class="left-show-on-scroll">
-          {% include blog.html %}
-        </div>
+        {{ content }}
       </div>
     </div>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/bundle.js" charset="utf-8"></script>
