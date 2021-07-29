@@ -85,3 +85,7 @@ a {
     transition: outline 0.7s ease-in;
   }
 }
+
+.about-socials {
+  border-bottom: solid 1px {{ site.colors.yellow }};
+}
