@@ -42,3 +42,4 @@ colors:
   purple: '#946bf4'
   yellow: '#ffc541'
   black-transparent: 'rgba(26, 27, 32, 0.85)'
+  dark-grey-transparent: 'rgba(66, 68, 80, 0.85)'
