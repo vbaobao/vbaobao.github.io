@@ -1,12 +1,14 @@
 ---
 layout: default
-title: About
+title: Home
 ---
 
-# Hello! I'm Virginia and a software engineer
-
-This website is a pseudo-portfolio and engineering blog.
-
-I've always had an affinity for programming, but did not approach it as a career path until after I already graduated university.
-
-But it's never too late, and there will always be technological advancements in one form or another. And I hope I will be there to be a part of it.
+<div class="left-show-on-scroll">
+  {% include about.html %}
+</div>
+<div class="left-show-on-scroll">
+  {% include portfolio.html %}
+</div>
+<div class="left-show-on-scroll">
+  {% include blog.html %}
+</div>
