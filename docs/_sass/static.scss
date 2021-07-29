@@ -57,6 +57,7 @@ footer {
 
   div {
     padding: 1.5rem 5rem;
+    padding-bottom: 0;
   }
 
   h1 {
@@ -65,6 +66,52 @@ footer {
 
   .about-lead-in {
     font-size: 5rem;
+  }
+
+  p {
+    padding: 2% 5%;
+  }
+
+  .about-socials {
+    display: flex;
+    justify-content: center;
+
+    span {
+      display: inline-block;
+      margin: 10px;
+      height: 60px;
+      width: 60px;
+      text-align: center;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > svg {
+          width: 25px;
+          height: 25px;
+          margin: 5px;
+        }
+
+        > p {
+          margin: 0;
+        }
+      }
+  
+      a:hover {
+        background-color: transparent;
+
+        > svg {
+          width: 23px;
+          height: 23px;
+        }
+
+        > p {
+          font-weight: 800;
+        }
+      }
+    }
   }
 }
 
@@ -99,6 +146,10 @@ footer {
 
 .image-profile {
   max-width: 350px;
+  max-height: 466px;
+  height: auto;
+  width: auto;
+  margin: auto;
 }
 
 .line-x {
