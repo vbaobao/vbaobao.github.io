@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding: 0;
 
     li::before {
       content: none;
