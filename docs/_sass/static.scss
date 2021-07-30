@@ -96,6 +96,7 @@ footer {
 
         > p {
           margin: 0;
+          text-decoration: underline;
         }
       }
   
@@ -199,4 +200,38 @@ footer {
     opacity: 1;
     transform: translateX(0%);
   }  
+}
+
+#email-modal {
+  position: fixed;
+  top: 32vh;
+  width: 200px;
+  height: 75px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.75s cubic-bezier(0,1,.3,1),
+              opacity 0.5s .25s ease-in;
+  will-change: transform, opacity;
+  border-top-right-radius: 75px;
+  border-bottom-right-radius: 75px;
+
+  &.is-visible { 
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+
+    &:hover {
+      font-weight: 800;
+    }
+  }
 }
