@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './components/Card';
+import EmailModal from './components/EmailModal';
 import ProjectData from '../assets/js/Projects.js';
 
 function Projects ({ data }) {
@@ -10,3 +11,5 @@ function Projects ({ data }) {
 };
 
 ReactDOM.render(<Projects data={ProjectData} />, document.getElementById('projects'));
+
+ReactDOM.render(<EmailModal/>, document.getElementById('email-modal'));
