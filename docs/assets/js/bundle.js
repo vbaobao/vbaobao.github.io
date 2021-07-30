@@ -30,6 +30,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./webpack/components/EmailModal.js":
+/*!******************************************!*\
+  !*** ./webpack/components/EmailModal.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar EmailModal = function EmailModal() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"modal-container\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"button\", {\n    className: \"click-to-close\"\n  }, \"close\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"contact\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"[at]\"), \"vbao\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"[dot]\"), \"info\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EmailModal);\n\n//# sourceURL=webpack://vbaobao.github.io/./webpack/components/EmailModal.js?");
+
+/***/ }),
+
 /***/ "./webpack/index.js":
 /*!**************************!*\
   !*** ./webpack/index.js ***!
@@ -37,7 +48,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Card */ \"./webpack/components/Card.js\");\n/* harmony import */ var _assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/js/Projects.js */ \"./assets/js/Projects.js\");\n/* harmony import */ var _assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nfunction Projects(_ref) {\n  var data = _ref.data;\n  var cards = data.map(function (project) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_2__.default, {\n      data: project,\n      key: project.title.toString(2)\n    });\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", null, cards);\n}\n\n;\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Projects, {\n  data: (_assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_3___default())\n}), document.getElementById('projects'));\n\n//# sourceURL=webpack://vbaobao.github.io/./webpack/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Card */ \"./webpack/components/Card.js\");\n/* harmony import */ var _components_EmailModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/EmailModal */ \"./webpack/components/EmailModal.js\");\n/* harmony import */ var _assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/js/Projects.js */ \"./assets/js/Projects.js\");\n/* harmony import */ var _assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\nfunction Projects(_ref) {\n  var data = _ref.data;\n  var cards = data.map(function (project) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Card__WEBPACK_IMPORTED_MODULE_2__.default, {\n      data: project,\n      key: project.title.toString(2)\n    });\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", null, cards);\n}\n\n;\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Projects, {\n  data: (_assets_js_Projects_js__WEBPACK_IMPORTED_MODULE_4___default())\n}), document.getElementById('projects'));\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EmailModal__WEBPACK_IMPORTED_MODULE_3__.default, null), document.getElementById('email-modal'));\n\n//# sourceURL=webpack://vbaobao.github.io/./webpack/index.js?");
 
 /***/ }),
 
