@@ -89,3 +89,15 @@ a {
 .about-socials {
   border-bottom: solid 1px {{ site.colors.yellow }};
 }
+
+#email-modal {
+  background-color: {{ site.colors.dark-grey-transparent }};
+
+  button {
+    color: {{ site.colors.white }};
+  }
+
+  span {
+    color: {{ site.colors.red }};
+  }
+}
