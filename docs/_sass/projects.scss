@@ -1,8 +1,8 @@
 #projects {
   ul {
-    display: flex;
+    display: grid;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    grid-template-columns: auto auto;
     padding: 0;
 
     li::before {
