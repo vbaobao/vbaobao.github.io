@@ -119,26 +119,7 @@ As seen in the folder structure there are 4 primary folders.
 
 To begin with, I expanded the possible routes for CRUD support. Currently, the API only handles `GET` requests.
 
-I updated the folder structure to separate the code into more granular functions.
-
-**From:**
-
-```bash
-|
-|_server
-  |_index.js
-```
-
-**To:**
-
-```bash
-|
-|_server
-  |_index.js
-  |_controllers.js
-```
-
-`controllers.js` contains the functions that will connect to the database and handle each type of CRUD request. Below is an example of how the functions were used.
+To make the code more modular I added a new file named `controllers.js`. `controllers.js` contains the functions that will connect to the database and handle each type of CRUD request. Below is an example of how the functions were used.
 
 ```javascript
 /** controllers.js */
@@ -158,7 +139,7 @@ app.put('/api/instructors/:instructorid', setInstructor);
 app.delete('/api/instructors/:instructorid', deleteInstructor);
 ```
 
-At the moment, the database used is still MongoDB.
+At the moment, the database used is still MongoDB, and we will be implementing a different database later on, so I won't go in-depth about what each function does just yet. But an overview:
 
 * `createInstructors` will insert a new instructor into the database.
 * `getInstructors` requires a course number, and will get all instructors for that particular course.
@@ -193,9 +174,83 @@ const instructorsSchema = new Schema({
 
 One of the goals of this project is to compare the performance of multiple databases. As it was inherited with MongoDB I was tasked to choose 2 other DBMS to compare, one SQL and one noSQL. The fated DBMS were PostgreSQL (relational DB) and Cassandra (noSQL).
 
+The goal is to compare data insertion and query efficiency for a database with 10 million primary records.
+
 ### <a name="data-gen-script"></a>Create a Data Generation Script
 
+To prepare for comparing the rate of data insertion for each database I decided to create a reusable data generation and insertion script. Due to the immense amount of data the data generation and insertion will have to be done asynchronously, or else the Javascript compiler will error out when it hits max heap allocation. The solution is not to increase memory allocation but to run the function asynchronously.
+
 ### <a name="compare-db"></a>Compare DBMS
+
+#### MongoDB
+
+The default generation script uses the [Faker](https://www.npmjs.com/package/faker) npm package to generate fake data, then write the generated data into a `.json` file. This is prior to any data insertion.
+
+**Records Generated**
+
+| 100   | 1k    | 10k   | 100k  | 1mil         | 10mil        |
+|-------|-------|-------|-------|--------------|--------------|
+| 1.91s | 3.42s | 2.64s | 7.73s | hit max heap | hit max heap |
+
+As you can see, max heap was hit pretty early. By removing the writing to file we were able to at least generate 1 million records.
+
+**Records Generated**
+
+| 100   | 1k    | 10k   | 100k  | 1mil   | 10mil        |
+|-------|-------|-------|-------|--------|--------------|
+| 2.11s | 0.76s | 1.07s | 4.49s | 35.62s | hit max heap |
+
+If we insert the data into a Mongo database by connecting to the database using [Mongoose](https://www.npmjs.com/package/mongoose) as is, unsurprisingly max heap is still hit and even earlier. This is using the `insertMany()` option with inserting in batches of 100, 1000, and 10000 records.
+
+**Records Inserted**
+
+| 100   | 1k    | 10k   | 100k     | 1mil         | 10mil        |
+|-------|-------|-------|----------|--------------|--------------|
+| 2.88s | 2.39s | 9.47s | 1m 19.3s | hit max heap | hit max heap |
+
+> **Pitfalls**
+>
+> * JSON files are much bigger than CSV files, so data generation could have been much faster and space efficient.
+> * fs.writeFile() is also not as efficient as creating a write stream with `fs.createWriteStream` when writing in batches. Write streams will queue the data to be inserted, and will not write the next one until the write is done.
+> Since this project uses sequential IDs, I had to overwrite Mongo's default hashed IDs. Generating these IDs in order also proved a challenge when working with batches.
+>
+> Major changes will be made later on in the project to address these pitfalls.
+
+To work around hitting maximum heap allocation in data generation I wrote a bash script that wrote data into multiple sequential JSON files asynchronously. This allowed for data to be written faster than continually adding to a single JSON file. The final result is 10 files containing 1 million records each.
+
+To work around hitting max heap during data insertion I found a way to insert massive amounts of data in bulk using `mongoimport` ([reference](https://docs.mongodb.com/manual/reference/program/mongoimport/)). This is built into Mongo.
+
+`time mongoimport --db=coursera --collection=instructors --type=json --file instructors_1.json --mode=insert --jsonArray`
+
+* Note: `time` allows the terminal to track time taken to run a file.
+
+The data from JSON file was inserted perfectly, but I still had to write a bash script that imported the JSON files one at a time. Insertion of 10 million records took in total 8.57 minutes in real time. The database is now 0.955GB.
+
+#### Cassandra
+
+Like MongoDB, Cassandra is a noSQL DBMS known for scalability. As it is a noSQL DBMS, it is recommended the documentation regarding how Cassandra DB and tables work most efficiently should be reviewed. Especially on topics such as how primary keys, indexes, and queries work. Unlike typical relational DBMS, Cassandra queries can only query values that are "keys". Keys refer to primary key, clustering columns, and compound primary keys. Primary keys are partition keys, representing the locality of data and uses a hash value to make querying fast. Clustering columns can be thought of as secondary keys. Compound primary keys use 2 or more columns as the primary key.
+
+**Pros**
+
+* scalability
+* fast querying via hash functions
+* can store a large amount of records nd expects data to be duplicated
+
+**Cons**
+
+* to be most efficient, partitions should be almost even sizes
+* must limit the number of partitions read by a query for optimal results
+* more structural planning required to the schema due to the above requests
+* cannot use JOINS in queries
+* handling duplicate data make the database take up more disk space, thus it would not work well with deployments into very small instances.
+
+While the use of hashes make querying very fast; unfortunately, one of the setbacks is that it can take up more space than our deployment instance can offer (AWS EC2 T2micro). So it is already not very likely for me to choose this DBMS if not necessary.
+
+I had to install [dsbulk](https://docs.datastax.com/en/dsbulk/doc/dsbulk/reference/dsbulkCmd.html). It is a Cassandra tool that can insert data in bulk in the form of JSON files. Similar to MongoImport, I wrote a shell script that imports the entire folder of dummy data.
+
+Using the same JSON file generated in the previous steps, seeding Cassandra took a total of 48 minutes and 43 seconds to seed. This is signifcantly longer than insertion into MongoDB.
+
+#### PostgreSQL
 
 ### <a name="postgres"></a>Update API to use PostgreSQL
 
