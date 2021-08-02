@@ -79,13 +79,14 @@ If we insert the data into a Mongo database by connecting to the database using 
 |-------|-------|-------|----------|--------------|--------------|
 | 2.88s | 2.39s | 9.47s | 1m 19.3s | hit max heap | hit max heap |
 
-> **Pitfalls**
->
-> * JSON files are much bigger than CSV files, so data generation could have been much faster and space efficient.
-> * fs.writeFile() is also not as efficient as creating a write stream with `fs.createWriteStream` when writing in batches. Write streams will queue the data to be inserted, and will not write the next one until the write is done.
-> Since this project uses sequential IDs, I had to overwrite Mongo's default hashed IDs. Generating these IDs in order also proved a challenge when working with batches.
->
-> Major changes will be made later on in the project to address these pitfalls.
+**Pitfalls**
+
+* JSON files are much bigger than CSV files, so data generation could have been much faster and space efficient.
+* fs.writeFile() is also not as efficient as creating a write stream with `fs.createWriteStream` when writing in batches. Write streams will queue the data to be inserted, and will not write the next one until the write is done.
+
+Since this project uses sequential IDs, I had to overwrite Mongo's default hashed IDs. Generating these IDs in order also proved a challenge when working with batches.
+
+Major changes will be made later on in the project to address these pitfalls.
 
 To work around hitting maximum heap allocation in data generation I wrote a bash script that wrote data into multiple sequential JSON files asynchronously. This allowed for data to be written faster than continually adding to a single JSON file. The final result is 10 files containing 1 million records each.
 
@@ -93,7 +94,7 @@ To work around hitting max heap during data insertion I found a way to insert ma
 
 `time mongoimport --db=coursera --collection=instructors --type=json --file instructors_1.json --mode=insert --jsonArray`
 
-* Note: `time` allows the terminal to track time taken to run a file.
+> Note: `time` allows the terminal to track time taken to run a file.
 
 The data from JSON file was inserted perfectly, but I still had to write a bash script that imported the JSON files one at a time. Insertion of 10 million records took in total 5 minutes 26 seconds in real time. The database is now 0.955GB.
 
@@ -174,6 +175,16 @@ CREATE INDEX index_assistant_instructors_instructor_id ON coursera.assistant_ins
 
 CREATE INDEX index_primary_instructors_instructor_id ON coursera.primary_instructors(instructor_id);
 ```
+
+**Pros**
+
+* The PRIMARY KEY can be SERIAL, which is particularly useful for this project in which the IDs are serial IDs.
+* Altering tables is simple, indexes and constraints can be added or removed flexibly.
+
+**Cons**
+
+* Data insertion into tables with many foreign keys can be complicated and will take longer.
+* Since IDs are not hashes, it will not query as fast as noSQL DBMS.
 
 #### Benchmarking and Comparing Query Speeds
 
