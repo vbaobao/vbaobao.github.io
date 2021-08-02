@@ -2,7 +2,7 @@
   ul {
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 0;
 
     li::before {
@@ -26,20 +26,24 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-
     width: 250px;
     height: 180px;
     padding: 5px;
     border-radius: 7px;
+    overflow: scroll;
 
     h2 {
       font-size: 1rem;
     }
 
+    p {
+      margin: 0;
+    }
+
     img {
       display: inline-block;
-      height: 100px;
-      width: 200px;
+      width: 250px;
+      height: 180px;
       object-fit: cover;
       border-radius: 5px;
     }
