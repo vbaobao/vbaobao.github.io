@@ -75,6 +75,11 @@ a {
   border-right: solid 1px {{ site.colors.red }};
 }
 
+img.image-profile {
+  border: solid 1px {{ site.colors.yellow }};
+  box-shadow: 5px 5px 15px 3px {{ site.colors.box-shadow }};
+}
+
 #projects li {
   transition: outline 1s ease-in;
   outline: solid 1px {{ site.colors.black }};
