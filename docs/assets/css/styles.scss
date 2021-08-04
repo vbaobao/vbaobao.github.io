@@ -105,7 +105,7 @@ a {
 
 #timeline {
 
-  .timeline-container { border-right: {{ site.colors.red }}; }
+  .timeline-container { border-right: dashed 2px {{ site.colors.yellow }}; }
 
   .timeline-card { background-color: {{ site.colors.purple-transparent }}; }
 }
