@@ -34,10 +34,16 @@ social_links:
   email: ''
 
 colors:
-  black: '#1a1b20'
+  white: '#ffffff'
+  black: '#3f2929'
+  pale-yellow: '#fff8e8'
+  pastel-yellow: '#fcd581'
+  maroon: '#d52941'
+  cardinal: '990d35'
+  off-black: '#1a1b20'
   dark-grey: '#424450'
   light-grey: '#7a7a7a'
-  white: '#e2e3e7'
+  off-white: '#e2e3e7'
   red: '#ff5f61'
   purple: '#946bf4'
   yellow: '#ffc541'
