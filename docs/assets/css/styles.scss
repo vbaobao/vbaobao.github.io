@@ -4,6 +4,7 @@
 @import "dracula";
 @import "static";
 @import "projects";
+@import "timeline";
 
 body, footer {
   background-color: {{ site.colors.black }};
