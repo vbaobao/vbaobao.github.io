@@ -33,16 +33,16 @@ setTimeout(() => {
   nav.forEach((element) => {
     observerSet.observe(element);
   })
-}, 500);
+}, 250);
 
 setTimeout(() => {
   sidebar.forEach((element) => {
     observerSet.observe(element);
   })
-}, 1500);
+}, 500);
 
 setTimeout(() => {
   animateToggledElements.forEach((element) => {
     observerToggle.observe(element);
   });
-}, 2000);
+}, 1000);
