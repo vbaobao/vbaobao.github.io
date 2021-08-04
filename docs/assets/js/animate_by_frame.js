@@ -16,20 +16,27 @@ const setVisible = (elements) => {
 
 const observerToggle = new IntersectionObserver(toggleVisibility);
 const observerSet = new IntersectionObserver(setVisible);
+const sidebar = document.querySelectorAll('.socials');
+const nav = document.querySelectorAll('nav');
 const animateUpElements = document.querySelectorAll('.up-show-on-scroll');
 const animateDownElements = document.querySelectorAll('.down-show-on-scroll');
 const animateRightElements = document.querySelectorAll('.right-show-on-scroll');
 const animateLeftElements = document.querySelectorAll('.left-show-on-scroll');
-const animateToggledElements = [...animateDownElements, ...animateLeftElements];
+const animateToggledElements = [
+  ...animateUpElements,
+  ...animateDownElements,
+  ...animateLeftElements,
+  ...animateRightElements
+];
 
 setTimeout(() => {
-  animateRightElements.forEach((element) => {
+  nav.forEach((element) => {
     observerSet.observe(element);
   })
 }, 500);
 
 setTimeout(() => {
-  animateUpElements.forEach((element) => {
+  sidebar.forEach((element) => {
     observerSet.observe(element);
   })
 }, 1500);
