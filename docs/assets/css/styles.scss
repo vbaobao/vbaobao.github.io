@@ -6,111 +6,134 @@
 @import "projects";
 @import "timeline";
 
+$dark-black: {{ site.colors.off-black }};
+$dark-white: {{ site.colors.off-white }};
+$dark-red: {{ site.colors.red }};
+$dark-purple: {{ site.colors.purple }};
+$dark-yellow: {{ site.colors.yellow }};
+$dark-light-grey: {{ site.colors.light-grey }};
+$dark-dark-grey: {{ site.colors.dark-grey }};
+$dark-black-t: {{ site.colors.black-transparent }};
+$box-shadow-color: {{ site.colors.box-shadow }};
+$dark-dark-grey-t : {{ site.colors.dark-grey-transparent }};
+$dark-purple-t : {{ site.colors.purple-transparent }};
+
 body, footer {
-  background-color: {{ site.colors.black }};
-  color: {{ site.colors.white }};
+  background-color: $dark-black;
+  color: $dark-white;
 }
 
 nav {
-  background-color: {{ site.colors.black-transparent }};
+  background-color: $dark-black-t;
 }
 
 .content-container {
     
   div { background-color: transparent; }
 
-  h1 { text-decoration-color: {{ site.colors.red }}; }
+  h1 { text-decoration-color: $dark-red; }
 
-  ol li::before { color: {{ site.colors.purple }}; }
+  ol li::before { color: $dark-purple; }
 
   ul {
-    li::before { color: {{ site.colors.yellow }}; }
-    li a { color: {{ site.colors.white }}; }
+    li::before { color: $dark-yellow; }
+    li a { color: $dark-white; }
   }
 
-  a { color: {{ site.colors.light-grey }}; }
+  a { color: $dark-light-grey; }
 
   blockquote p {
-    border-left: 2px solid {{ site.colors.purple }};
+    border-left: 2px solid $dark-purple;
   }
 
-  hr { border-bottom: 2px solid {{ site.colors.purple }}; }
+  hr { border-bottom: 2px solid $dark-purple; }
 
-  table { border: 1px solid {{ site.colors.purple }}; }
+  table { border: 1px solid $dark-purple; }
 
   th {
-    border: 1px solid {{ site.colors.purple }};
-    background-color: {{ site.colors.purple }};
-    color: {{ site.colors.dark-grey }};
+    border: 1px solid $dark-purple;
+    background-color: $dark-purple;
+    color: $dark-dark-grey;
   }
 
-  td { border: 1px dotted {{ site.colors.purple }}; }
+  td { border: 1px dotted $dark-purple; }
 }
 
 a {
-  color: {{ site.colors.white }};
+  color: $dark-white;
 
   &:hover {
-    background-color: {{ site.colors.light-grey }};
+    background-color: $dark-light-grey;
+  }
+}
+
+.resume-button {
+  border: solid 1px $dark-red;
+  color: $dark-white;
+
+  &:hover {
+    font-weight: 800;
+    border: none;
+    background-color: $dark-purple-t;
   }
 }
 
 .linkedin {
-  fill: {{ site.colors.red }};
+  fill: $dark-red;
 }
 
 .github {
-  fill: {{ site.colors.purple }};
+  fill: $dark-purple;
 }
 
 .email {
-  fill: {{ site.colors.yellow }};
+  fill: $dark-yellow;
 }
 
 .line-x {
-  border-bottom: solid 1px {{ site.colors.red }};
+  border-bottom: solid 1px $dark-red;
 }
 
 .line-y {
-  border-right: solid 1px {{ site.colors.red }};
+  border-right: solid 1px $dark-red;
 }
 
 img.image-profile {
-  border: solid 1px {{ site.colors.yellow }};
-  box-shadow: 5px 5px 15px 3px {{ site.colors.box-shadow }};
+  border: solid 1px $dark-yellow;
+  box-shadow: 5px 5px 15px 3px $box-shadow-color;
 }
 
 #projects li {
   transition: outline 1s ease-in;
-  outline: solid 1px {{ site.colors.black }};
-  box-shadow: 1px 2px 5px 1px {{ site.colors.black }};
+  outline: solid 1px $dark-black;
+  box-shadow: 1px 2px 5px 1px $dark-black;
 
   &:hover {
-    outline: solid 1px {{ site.colors.purple }};
-    box-shadow: 1px 2px 5px 1px {{ site.colors.dark-grey }};
+    outline: solid 1px $dark-purple;
+    box-shadow: 1px 2px 5px 1px $dark-dark-grey;
     transition: outline 0.7s ease-in;
   }
 }
 
 .about-socials {
-  border-bottom: solid 1px {{ site.colors.yellow }};
+  border-bottom: solid 1px $dark-yellow;
 }
 
 #email-modal {
-  background-color: {{ site.colors.dark-grey-transparent }};
+  background-color: $dark-dark-grey-t;
 
   button {
-    color: {{ site.colors.white }};
+    color: $dark-white;
   }
 
   span {
-    color: {{ site.colors.red }};
+    color: $dark-red;
   }
 }
 
 #timeline {
 
-  .timeline-container { border-right: dashed 2px {{ site.colors.yellow }}; }
+  .timeline-container { border-right: dashed 2px $dark-yellow; }
 
-  .timeline-card { background-color: {{ site.colors.purple-transparent }}; }
+  .timeline-card { background-color: $dark-purple-t; }
 }
