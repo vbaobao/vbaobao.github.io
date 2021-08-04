@@ -102,3 +102,10 @@ a {
     color: {{ site.colors.red }};
   }
 }
+
+#timeline {
+
+  .timeline-container { border-right: {{ site.colors.red }}; }
+
+  .timeline-card { background-color: {{ site.colors.purple-transparent }}; }
+}
