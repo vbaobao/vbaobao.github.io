@@ -1,7 +1,7 @@
 module.exports = [
   {
     years: "2021 - present",
-    title: "Operations Project Coordinator",
+    title: "Product Operations Project Coordinator II",
     company: "Adecco, on-site at Google",
     description: "Incubated new processes to scale and streamline fraud investigation and resolution. Organized and codified insights from high priority fraud and abuse cases, including data standardization.",
   },
