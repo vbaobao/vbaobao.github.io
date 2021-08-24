@@ -9,7 +9,7 @@ module.exports = [
     years: "2020 - present",
     title: "Web Developer",
     company: "US Best Transport Inc.",
-    description: "Developed features within the internal company application that handles geohash tracking for each clientele, invoicing, expenses, and overall profit margin. Introduced prototypes of workflow features within the app, applying agile development methodologies and service oriented architecture.",
+    description: "Developed features within the internal company application that handles tracking for each clientele, invoicing, expenses, and overall profit margin.",
   },
   {
     years: "2020 - 2021",
